@@ -1,5 +1,6 @@
 body {
   background-color: #555;
+  margin-left: 20px;
 }
 
 /* .App {
@@ -25,4 +26,9 @@ button {
   min-width: 200px;
   padding: 10px 20px;
   margin-top: 20px;
+}
+
+span {
+  color: red;
+  font-size: 12px;
 }
