@@ -7,6 +7,7 @@ class App extends Component {
     email: "",
     pass: "",
     accept: false,
+    message: "",
 
     errors: {
       username: true,
@@ -50,6 +51,7 @@ class App extends Component {
         email: "",
         pass: "",
         accept: false,
+        message: "Formularz został wysłany",
 
         errors: {
           username: false,
@@ -104,6 +106,18 @@ class App extends Component {
       accept
     };
   };
+
+  componentDidUpdate() {
+    console.log("update");
+
+    if (this.state.message !== "") {
+      setTimeout(() => {
+        this.setState({
+          message: ""
+        });
+      }, 3000);
+    }
+  }
 
   render() {
     return (
@@ -166,6 +180,7 @@ class App extends Component {
           )}
           <button>Zapisz się</button>
         </form>
+        {this.state.message && <h3>{this.state.message}</h3>}
       </div>
     );
   }
